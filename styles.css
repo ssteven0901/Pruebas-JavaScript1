@@ -1,0 +1,65 @@
+.dots {
+    display: flex; gap: 5px;
+}
+
+.dot {
+    width: 30px; height: 30px;
+    background-color: blueviolet;
+    border-radius: 50%;
+    animation: 0.4s updown infinite
+        alternate ease-in-out;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+@keyframes updown {
+    0% { transform: translateY(15px);}
+}
+
+.bg-gradient {
+    width: 300px; height: 150px;
+    background: linear-gradient(
+        90deg, grey, black
+    );
+    background-size: 400%, 400%;
+    border-radius: 10px;
+    animation: 2s gradient infinite;
+    display: grid;
+    place-content: center;
+}
+
+/* slide box */
+.box {
+    width: 150px; height: 150px;
+    background-color: gray;
+    display: grid;
+    place-content: center;
+    position: relative;
+}
+
+.box:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(https://m.media-amazon.com/images/I/31REl9uTa4L._AC_SY355_.jpg);
+    background-size: cover;
+    transition: 0.5s;
+}
+.box:hover:before {
+    transform: translateX(150px);
+}
+
+.titu-gradient {
+    color: white;
+    display: grid;
+    place-content: center;
+    position: relative;
+}
+
+@keyframes gradient {
+    0% {background-position: 0 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0 50%;}
+}
